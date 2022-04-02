@@ -10,7 +10,7 @@ export let myContext = createContext<Movie[]>([]);
 
 function App() {
 
-    const [movies, setMovies] = useState<any>();
+    const [movies, setMovies] = useState<any>([]);
 
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
             .then(response => {
 
                 setMovies(
-                    response.data.map((movie) => {
+                    response.data.map((movie:Movie) => {
                         
                         return(
                             <div>
